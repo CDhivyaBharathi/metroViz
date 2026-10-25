@@ -1,0 +1,29 @@
+{
+ "lines": [
+  {"id": "RED", "name": "Red Line", "color": "#FF4040"},
+  {"id": "BLUE", "name": "Blue Line", "color": "#4169E1"},
+  {"id": "YELLOW", "name": "Yellow Line", "color": "#FFDF00"},
+  {"id": "GREEN", "name": "Green Line", "color": "#008000"}
+ ],
+ "stations": [
+  {"id": "a", "name": "Alpha", "code": "ALP", "lat": 28.60, "lon": 77.10, "lines": ["RED", "YELLOW"]},
+  {"id": "b", "name": "Bravo", "code": "BRV", "lat": 28.60, "lon": 77.12, "lines": ["RED"]},
+  {"id": "c", "name": "Charlie", "code": "CHR", "lat": 28.60, "lon": 77.14, "lines": ["BLUE", "RED", "YELLOW"]},
+  {"id": "d", "name": "Delta", "code": "DLT", "lat": 28.60, "lon": 77.16, "lines": ["RED"]},
+  {"id": "e", "name": "Echo", "code": "ECH", "lat": 28.63, "lon": 77.14, "lines": ["BLUE"]},
+  {"id": "f", "name": "Foxtrot", "code": "FXT", "lat": 28.57, "lon": 77.14, "lines": ["BLUE"]},
+  {"id": "g", "name": "Golf", "code": "GLF", "lat": 28.61, "lon": 77.12, "lines": ["YELLOW"]},
+  {"id": "h", "name": "Hotel", "code": "HTL", "lat": 28.70, "lon": 77.30, "lines": ["GREEN"]},
+  {"id": "i", "name": "India", "code": "IND", "lat": 28.70, "lon": 77.32, "lines": ["GREEN"]}
+ ],
+ "edges": [
+  {"a": "a", "b": "b", "line": "RED", "minutes": 2},
+  {"a": "b", "b": "c", "line": "RED", "minutes": 2},
+  {"a": "c", "b": "d", "line": "RED", "minutes": 2},
+  {"a": "e", "b": "c", "line": "BLUE", "minutes": 3},
+  {"a": "c", "b": "f", "line": "BLUE", "minutes": 3},
+  {"a": "a", "b": "g", "line": "YELLOW", "minutes": 1},
+  {"a": "g", "b": "c", "line": "YELLOW", "minutes": 1.5},
+  {"a": "h", "b": "i", "line": "GREEN", "minutes": 2}
+ ]
+}

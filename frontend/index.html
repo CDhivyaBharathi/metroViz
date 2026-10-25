@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Delhi Metro Route Planner</title>
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Delhi Metro Route Planner</h1>
+      <span class="sub">Click two stations on the map or type their names, then Find route.</span>
+    </header>
+    <main class="layout">
+      <aside class="sidebar">
+        <form id="form" autocomplete="off">
+          <div class="field">
+            <label for="src">From</label>
+            <div class="combo">
+              <input id="src" type="text" placeholder="Station name or code" />
+              <button id="src-clear" type="button" class="clear" aria-label="Clear source">×</button>
+              <ul id="src-list" class="suggestions" hidden></ul>
+            </div>
+          </div>
+          <div class="field">
+            <label for="dst">To</label>
+            <div class="combo">
+              <input id="dst" type="text" placeholder="Station name or code" />
+              <button id="dst-clear" type="button" class="clear" aria-label="Clear destination">×</button>
+              <ul id="dst-list" class="suggestions" hidden></ul>
+            </div>
+          </div>
+          <div class="actions">
+            <button id="find" type="submit" class="primary" disabled>Find route</button>
+            <button id="swap" type="button" title="Swap source and destination">⇅</button>
+            <button id="reset" type="button">Reset</button>
+          </div>
+        </form>
+        <section id="panel" class="panel" aria-live="polite"></section>
+        <footer class="credits">
+          Map data © OpenStreetMap contributors (ODbL). Travel times, station codes and gates: DMRC data via
+          Delhi Transport Stack / Delhi Open Transit Data, Transport Department, GNCTD.
+        </footer>
+      </aside>
+      <section class="map-wrap">
+        <svg id="map" role="img" aria-label="Delhi Metro network map"></svg>
+        <div class="map-controls">
+          <button id="zoom-in" type="button" aria-label="Zoom in">+</button>
+          <button id="zoom-out" type="button" aria-label="Zoom out">−</button>
+          <button id="fit" type="button" aria-label="Reset the view">Reset</button>
+        </div>
+        <div id="legend" class="legend"></div>
+        <div class="attrib">Background © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors</div>
+        <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+        <div id="picker" class="picker" role="dialog" aria-label="Use this station" hidden></div>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
